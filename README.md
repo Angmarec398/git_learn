@@ -27,5 +27,6 @@ git commit --amend --no-edit - Добавление файла/файлов до
 git reset --hard 4987153   - откатить изменения до коммита 4987153
 
 git restore --staged .\example.txt - убрать файл example.txt из очереди на сохранение (git add example.txt)
+git restore .\example.txt - откатит файл до последней версии сохраненной при помощи git add и git commit
 
 ```

@@ -1,1 +1,2 @@
-initials
+First changes in document
+Second changes in document

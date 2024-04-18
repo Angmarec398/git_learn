@@ -49,4 +49,9 @@ git branch  feature/add-branch-info - создать ветку feature/add-bran
 git checkout -b feature/add-branch-info - создать ветку feature/add-branch-info и сразу начать работать в ней.
 git checkout feature/add-branch-info - переключение на ветку feature/add-branch-info
 git diff feature/add-branch-info bugfix/fix-branch - сравнить какие изменения произошли в fix-branch по отношению к add-branch-info
+
+Объединение и удаление веток
+git merge feature/add-branch-info - обединяет ветку feature/add-branch-info с той, в которой мы находимся сейчас
+git branch -D feature/add-branch-info - удаляет ветку feature/add-branch-info
+git branch -d feature/add-branch-info -  удаляет ветку в том случае, если данные из нее есть в другой ветке (нет уникальных данных).
 ```

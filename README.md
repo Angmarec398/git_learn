@@ -43,7 +43,8 @@ git diff HEAD~5 - пятый коммит с конца
 ```
 ```
 Ветки
-git branch - посмотреть список текущих веток
+git branch - посмотреть список локальных веток
+git branch -a - посмотреть список локальных и удаленных веток
 git branch  feature/add-branch-info - создать ветку feature/add-branch-info. По умолчанию с тегом feature добавляется новый функционал, а с тегом bugfix устраняются ошибки.
 git checkout -b feature/add-branch-info - создать ветку feature/add-branch-info и сразу начать работать в ней.
 git checkout feature/add-branch-info - переключение на ветку feature/add-branch-info

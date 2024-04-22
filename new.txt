@@ -1,1 +1,2 @@
 New file for branch feature/newgit 
+new test line

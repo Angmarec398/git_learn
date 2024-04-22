@@ -27,6 +27,7 @@ rm -rf .git - рассоединиться с Git
 
 git commit --amend -m "Test write Readme and add ambed.txt" - редактирование текста последнего коммита
 git commit --amend --no-edit - Добавление файла/файлов добавленных через git add - в последний коммит, без создания нового коммита.
+git commit -am "commit message" - git add и git commit -m в одной команде
 git rm --cached config.py - Убрать файл из отслеживания Git
 ```
 ```
@@ -66,6 +67,8 @@ git diff feature/add-branch-info bugfix/fix-branch - сравнить какие
 
 Объединение и удаление веток
 git merge feature/add-branch-info - обединяет ветку feature/add-branch-info с той, в которой мы находимся сейчас
+git merge --no-ff feature/add-branch-info - обединяет ветку feature/add-branch-info с той, в которой мы находимся сейчас и создает отдельный коммит об объединении веток (РЕКОМЕНДУЕТСЯ)
+git config --add merge.ff false - отключить fast-forward в проекте
 git branch -D feature/add-branch-info - удаляет ветку feature/add-branch-info
 git branch -d feature/add-branch-info -  удаляет ветку в том случае, если данные из нее есть в другой ветке (нет уникальных данных).
 ```

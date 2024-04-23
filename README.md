@@ -18,6 +18,12 @@ git status - Статус файлов
 git status --ignored - Показать игнорируемые файлы
 ```
 ```
+Отправка
+git push - отправка данных в удаленный репозиторий
+git push --force - отправка данных в удаленный репозиторий и при возниковении конфликтов данные из локального репозитория перепишут данные в удаленном репозитории (НЕ РЕКОМЕНДУЕТСЯ)
+git push -u origin hotfix/new - соединение данных в локальной ветке hotfix/new с веткой hotfix/new в удаленном репозитории. Если в репозитории отсутствует ветка hotfix/new, она создается в репозитории.
+```
+```
 git filter-branch --force --index-filter \ 'git rm --cached --ignore-unmatch app.py' \ --prune-empty --tag-name-filter cat -- --all  - Удалить файл из всех коммитов (пример app.py)
 
 rm -rf .git - рассоединиться с Git
@@ -29,6 +35,7 @@ git commit --amend -m "Test write Readme and add ambed.txt" - редактиро
 git commit --amend --no-edit - Добавление файла/файлов добавленных через git add - в последний коммит, без создания нового коммита.
 git commit -am "commit message" - git add и git commit -m в одной команде
 git rm --cached config.py - Убрать файл из отслеживания Git
+git cherry-pick cb42c31 - Копирование коммита с данными и перенос в ведку в которой выполняется данная комманда
 ```
 ```
 Тэги
@@ -54,6 +61,7 @@ git diff --staged - показывает изменения в файле пос
 git diff a9928ab 11bada1 - показывает разницу между комитами (от первого к последнему, git diff 11bada1 a9928ab(HEAD) от последнего к первому)
 git diff HEAD~1 (git diff HEAD~)- предыдущий комит после последнего
 git diff HEAD~5 - пятый коммит с конца
+git diff feature/new master .\README.md - сравнение файла README.md из ветки feature/new с README.md из ветки master
 
 ```
 ```
@@ -71,4 +79,20 @@ git merge --no-ff feature/add-branch-info - обединяет ветку featur
 git config --add merge.ff false - отключить fast-forward в проекте
 git branch -D feature/add-branch-info - удаляет ветку feature/add-branch-info
 git branch -d feature/add-branch-info -  удаляет ветку в том случае, если данные из нее есть в другой ветке (нет уникальных данных).
+git rebase hotfix/new - перенос данных и коммитов из одной ветки в другую
 ```
+```
+Корректная последовательность действи при работе с ветками
+СОЗЛАНИЕ ВЕТКИ
+git checkout master
+git pull
+git branch feature/new
+git push -u (или --set-upstream) origin feature/new
+Слияние веток
+git checkout master
+git pull
+git merge feature/new
+git push
+```
+[Инструкция по архитектуре веток в проекте](https://habr.com/ru/articles/106912/)
+

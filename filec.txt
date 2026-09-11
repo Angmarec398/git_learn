@@ -1,3 +1,4 @@
 note one
 note two
 note three
+note fore
